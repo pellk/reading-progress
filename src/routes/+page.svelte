@@ -56,7 +56,8 @@ function save() {
 		<div class="progress" style:width="{progress}%">
 			{Math.round(progress)}%
 		</div>
-		<div class="due" style:width="{now}%" />
+		<div class="now" style:width="{now}%" />
+		<div class="due">Due: {Math.round((now / 100) * (end - start) + start)}</div>
 	</div>
 </main>
 
@@ -117,7 +118,13 @@ fieldset input {
 	background: #2255ff88;
 	z-index: 1;
 }
-.due {
+.now {
 	background: #ff220088;
+}
+.due {
+	justify-self: right;
+	padding: 0 0.5em;
+	z-index: 2;
+	opacity: 0.8;
 }
 </style>
